@@ -8,10 +8,10 @@ app.use(express.static('public'))
 app.set('views', './');
 app.set('view engine', 'ejs');
 const connection = mysql.createConnection({
-    host: "nagpdatabase.ccq7lxbjhtoi.ap-south-1.rds.amazonaws.com",
-    user: "admin",
-    database: "nagp",
-    password: "Sakshisea"
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    database: process.env.MYSQL_DATABASE,
+    password: process.env.MYSQL_PWD
 });
 
 
