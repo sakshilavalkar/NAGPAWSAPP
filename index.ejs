@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <%- include('./partials/Head'); %>
+        <title>Home | BlogIn</title>
+</head>
+
+<body>
+    <%- include('./partials/Header'); %>
+        <main role="main" class="container">
+
+            <div class="row justify-content-md-center">
+
+                <div class="col-md-8 mt-4 mb-5">
+
+                    <%if(articles.length!=0){%>
+                        <% articles.forEach(article=>{ %>
+                            <article class="media content-section">
+                                <div class="media-body">
+
+                                    <div class="d-flex flex-grow-1 justify-content-between align-items-center">
+                                        <h2 class="col-11"><a class="article-title">
+                                                <%=article.title %>
+                                            </a></h2>
+                                    </div>
+
+
+                                    <div class="article-content">
+                                        <%= article.content%>
+                                    </div>
+
+
+
+                                </div>
+                            </article>
+                            <% }) %>
+                                <%}else{%>
+
+                                    <div class="text-center alert alert-primary">
+                                        Sorry!! no post available, Please create your own post
+                                    </div>
+
+                                    <%}%>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            setTimeout(() => {
+                console.log("in set timeout");
+                document.getElementById('message').style.display = 'none';
+            }, 2000)
+        </script>
+</body>
+
+</html>
